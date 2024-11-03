@@ -1,0 +1,8 @@
+{
+  "name": "List Applications",
+  "description": "description",
+  "uuid": "applicationlist@johannes.wolf.at",
+  "shell-version": [
+    "47"
+  ]
+}
