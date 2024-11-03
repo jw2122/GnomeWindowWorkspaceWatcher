@@ -36,3 +36,4 @@ touch ~/.local/share/gnomeWindowWorkspaceWatcher/windowChangeList
 ```sh
 gnome-session-quit
 ```
+6. You might have to enable the extension using the Gnome Extensions application
