@@ -39,7 +39,7 @@ async function readFile(filePath) {
 
 // this runs the nodejs script for X-based applications which are not showed up sometimes
 function xWindowChange() {
-    GLib.spawn_command_line_async('/usr/bin/node .local/share/gnome-shell/extensions/gnomeWindowWorkspaceWatcher/xWindowChange.js')
+    GLib.spawn_command_line_async('/usr/bin/node .local/share/gnome-shell/extensions/gnomeWindowWorkspaceWatcher@jw2122.github.com/xWindowChange.js')
 }
 
 
