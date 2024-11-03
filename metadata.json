@@ -1,8 +1,8 @@
 {
-  "name": "List Applications",
-  "description": "description",
-  "uuid": "applicationlist@johannes.wolf.at",
+  "name": "Window-Workspace Watcher",
+  "description": "GNOME extension which runs commands if the Window or the Workspace changes giving the focused application name or the actual workspace as an argument",
+  "uuid": "gnomeWindowWorkspaceWatcher@jw2122.github.com",
   "shell-version": [
-    "47"
+    "46","47"
   ]
 }

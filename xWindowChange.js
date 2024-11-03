@@ -16,7 +16,7 @@ async function main() {
     const focusedWindow = await runCmd("xdotool getactivewindow getwindowname | awk -F ' - ' '{print $NF}'")
     const commandList = (await runCmd("cat ~/.local/share/gnomeWindowWorkspaceWatcher/windowChangeList")).toString().trim().split('\n')
 
-    // set lastFocusedWindow also if no focused Window to send notification if focus again
+    // set lastFocusedWindow also if no focused Window detected to send command when focus again
     if (lastFocusedWindow === focusedWindow) return;
     lastFocusedWindow = focusedWindow;
     if (focusedWindow === '') return;
