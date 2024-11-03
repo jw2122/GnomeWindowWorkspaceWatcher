@@ -7,7 +7,7 @@ let focusWindowListener;
 async function onWorkspaceChanged() {
     try {
         const workspace = global.workspace_manager.get_active_workspace_index();
-        const workspaceChangeList = (await runCmdWithOutput('cat .local/applicationList/workspaceChangeList')).trim().split('\n');
+        const workspaceChangeList = (await runCmdWithOutput('cat .local/share/gnomeWindowWorkspaceWatcher/workspaceChangeList')).trim().split('\n');
         for (let call of workspaceChangeList) {
             log(call)
             GLib.spawn_command_line_async(`${call} ${workspace}`);
@@ -22,7 +22,7 @@ async function onFocusWindowChanged() {
     const name = windowTracker.focusApp?.get_name();
     if (name === undefined) return;
 
-    for (let call of (await runCmdWithOutput('cat .local/applicationList/windowChangeList')).toString().split('\n')) {
+    for (let call of (await runCmdWithOutput('cat .local/share/gnomeWindowWorkspaceWatcher/windowChangeList')).toString().split('\n')) {
         GLib.spawn_command_line_async(`${call} ${name}`);
     }
 }
@@ -34,7 +34,7 @@ async function runCmdWithOutput(command) {
 }
 
 async function xWindowChange() {
-    GLib.spawn_command_line_async('/usr/bin/node .local/share/gnome-shell/extensions/applicationlist@johannes.wolf.at/xWindowChange.js')
+    GLib.spawn_command_line_async('/usr/bin/node .local/share/gnome-shell/extensions/gnomeWindowWorkspaceWatcher/xWindowChange.js')
 }
 
 
